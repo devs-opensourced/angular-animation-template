@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {particleParams} from './particles.js';
+import { Component, OnInit } from '@angular/core';
+import { particleParams } from './particles.js';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'angular-animation-template';
 
   myStyle: object = {};
@@ -27,5 +27,6 @@ export class AppComponent implements OnInit{
     };
 
     this.myParams = particleParams;
+
   }
 }

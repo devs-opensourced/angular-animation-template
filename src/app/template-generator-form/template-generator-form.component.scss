@@ -1,0 +1,31 @@
+.card{
+    display: inline-block;
+    background-image: linear-gradient(to top, #3e6484 50%, transparent 50%);
+    background-size: 100% 200%;
+    background-position: top;
+    transition: background-position 0.5s ease-in-out;
+    border: none;
+}
+
+.card:hover{
+    background-position: bottom;
+    color: #fff;
+}
+
+.templates{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bg-theme-blue{
+    background-color: #0d2b2b;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0 0 0.25rem 0.25rem;
+    border-color:#3e6484;
+}
+
+.template-form{
+    width: 40%;
+    margin: 0 auto;
+}

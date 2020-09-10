@@ -1,0 +1,40 @@
+<div class="container py-5 px-0">
+    <h2 class="text-center pb-3 text-light">APP GENERATOR</h2>
+    <hr class="my-4 bg-light">
+    <div *ngIf="!setTemplate" class="templates mt-4">
+        <div *ngFor="let t of templates; let i = index" class="card my-3" style="width: 16rem;" (mouseover)="hovered=i"
+            (mouseleave)="hovered=-1">
+            <div class="card-body">
+                <h5 class="card-title">{{t.title}}</h5>
+                <p class="card-text">{{t.desc}}</p>
+
+            </div>
+            <button (click)="selectTemplate(i)" [ngStyle]="{visibility: hovered==i  ? 'visible' : 'hidden'}"
+                type="button" class="btn btn-md btn-block bg-theme-blue">Select Templete</button>
+        </div>
+    </div>
+
+    <div *ngIf="setTemplate" class="template-form">
+        <form>
+            <div class="form-group">
+                <label for="name" class="text-light">Enter domain name</label>
+                <input type="email" class="form-control" id="name" aria-describedby="emailHelp"
+                    placeholder="Enter domain name">
+                <small id="emailHelp" class="form-text text-danger">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="type" class="text-light">Enter type</label>
+                <select class="form-control" id="type">
+                    <option>Private</option>
+                    <option>Public</option>
+                </select>
+            </div>
+            <button (click)="generateTemplate()" type="submit" class="btn btn-primary">Generate Template</button>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com/users/codertocat -I HTTP/1.1 200 OK X-OAuth-Scopes: repo, user X-Accepted-OAuth-Scopes: user -->
